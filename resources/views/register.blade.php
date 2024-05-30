@@ -2,7 +2,13 @@
 
 @section('main')
 <title>Register Page</title>
-<h1 class="text-center" style="background-color: #fff;">REGISTER FORM</h1>
+<h1 class="text-center" style="background-color: #fff;">REGISTERATION FORM</h1>
+    @if (session('success')) 
+    <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <form method="POST" action="/registration-user">
     @csrf
     @method('POST')
